@@ -363,7 +363,7 @@ div.desc {
   max-height: 80%;
   position: relative;
   top: -100%;
-    z-index: 999;
+  z-index: 999;
 }
 
 .lightbox:target {

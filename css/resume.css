@@ -236,6 +236,15 @@ div.desc {
   line-height: 1.4;
 }
 
+.caption {
+ display: inline-block;
+  color: #343a40;
+  padding: 5px;
+  border-radius: 0.5rem;
+  margin-top: 7px;
+  font-size: .9rem;
+  transition: background-color 0.3s ease;
+}
 .reporting-list-with-images {
   list-style: none;
   padding: 0;

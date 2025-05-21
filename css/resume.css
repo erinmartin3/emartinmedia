@@ -39,12 +39,17 @@ h1 {
 h2 {
   font-size: 3.5rem; }
 
+
 .subheading {
   text-transform: uppercase;
   font-weight: 400;
   font-family: 'Inter', serif;
   font-size: 1rem; 
 padding-top:.5rem;
+}
+
+.mb-5,.my-5{
+    margin-bottom:2rem!important;
 }
 
 .list-social-icons a {
@@ -120,7 +125,7 @@ section.resume-section {
 @media (min-width: 992px) {
   section.resume-section {
     padding-top: 3rem !important;
-    padding-bottom: 3rem !important; } }
+    } }
 
 .bg-primary {
   background-color: #457996 !important; }

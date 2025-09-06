@@ -1,313 +1,445 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    var $copyContainer = $(".copy-container"),
+        $replayIcon = $('#cb-replay'),
+        $copyWidth = $('.copy-container').find('p').width();
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Grad Photos</title>
-    <link rel="icon" href="../img/favicon.png">
+    var mySplitText = new SplitText($copyContainer, {type:"words"}),
+        splitTextTimeline = new TimelineMax();
+    var handleTL = new TimelineMax();
 
-    <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    // WIP - need to clean up, work on initial state and handle issue with multiple lines on mobile
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    var tl = new TimelineMax();
 
-    <!-- Custom fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-      
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    tl.add(function(){
+        animateCopy();
+        blinkHandle();
+    }, 0.2)
 
-    <!-- Custom styles -->
-    <link href="css/gradphotos.css" rel="stylesheet">
-</head>
+    function animateCopy() {
+        mySplitText.split({type:"chars, words"})
+        splitTextTimeline.staggerFrom(mySplitText.chars, 0.001, {autoAlpha:0, ease:Back.easeInOut.config(1.7), onComplete: function(){
+                animateHandle()
+            }}, 0.05);
+    }
 
-<body>
+    function blinkHandle() {
+        handleTL.fromTo('.handle', 0.4, {autoAlpha:0},{autoAlpha:1, repeat:-1, yoyo:true}, 0);
+    }
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://forms.gle/XaGw6ghwwDDLKoLs8" target="_blank">Booking</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#faq">FAQ</a></li>
-        </ul>
-    </nav>
+    function animateHandle() {
+        handleTL.to('.handle', 0.7, {x:$copyWidth, ease:SteppedEase.config(12)}, 0.05);
+    }
 
-    
-   <section class="resume-section d-flex flex-column align-items-center text-center" id="pricing">
-  <div class="my-auto">
-    <h2><div class="blue-header">Pricing</div></h2>
-    <div class="container mt-4">
-      <div class="row justify-content-center">
-        <!-- Package 1 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../gradphotos/emartinmediagradphotosexamples-13.jpg" class="card-img-top" alt="1 Hour Individual">
-            <div class="card-body">
-              <h5 class="card-title">30 Minute Shoot</h5>
-              <h6 class="card-subtitle mb-2 text-muted">$75</h6>
-              <p class="card-text">
-                  Individual shoot<br>
-                Unlimited photos<br>
-                One outfit<br>
-                Up to 3 distinct locations
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Package 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../gradphotos/GraduationPhotos-11.jpg" class="card-img-top" alt="1 Hour Individual">
-            <div class="card-body">
-              <h5 class="card-title">1 Hour Shoot</h5>
-              <h6 class="card-subtitle mb-2 text-muted">$150</h6>
-              <p class="card-text">
-                                    Individual shoot<br>
+    $('#cb-replay').on('click', function(){
+        splitTextTimeline.restart()
+        handleTL.restart()
+    })
+</script>
 
-                Unlimited photos<br>
-                One or two outfits<br>
-                Up to 5 distinct locations
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Package 3 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../gradphotos/GraduationPhotos-24.jpg" class="card-img-top" alt="1 Hour Individual">
-            <div class="card-body">
-              <h5 class="card-title">1 Hour Shoot</h5>
-              <h6 class="card-subtitle mb-2 text-muted">$300</h6>
-              <p class="card-text">
-                Up to 3 people shoot<br>
-                Unlimited photos<br>
-                One outfit<br>
-                Up to 5 distinct locations
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Package 4 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../gradphotos/GraduationPhotos-18.jpg" class="card-img-top" alt="1 Hour Individual">
-            <div class="card-body">
-              <h5 class="card-title">1 Hour Shoot</h5>
-              <h6 class="card-subtitle mb-2 text-muted">$400</h6>
-              <p class="card-text">
-                4 to 8 people<br>
-                  Unlimited photos<br>
-                One outfit<br>
-                Up to 5 distinct locations
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Package 5 -->
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img src="../gradphotos/GraduationPhotos-7.jpg" class="card-img-top" alt="1 Hour Individual">
-            <div class="card-body">
-              <h5 class="card-title">1 Hour Shoot</h5>
-              <h6 class="card-subtitle mb-2 text-muted">$450</h6>
-              <p class="card-text">
-                8+ people<br>
-                  Unlimited photos<br>
-                One outfit<br>
-                Up to 3 distinct locations
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    
-       
-    <section class="resume-section d-flex flex-column align-items-center text-center" id="faq">
-  <h2><div class="blue-header">FAQ</div></h2>
-  <div class="container mt-4 text-start">
-    <div class="accordion" id="faqAccordion">
 
-      <!-- FAQ 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-            What does "distinct locations" mean?
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Distinct locations refer to unique spots on campus, such as Lake Mary Nell, a residential neighborhood, an academic building, a fountain, etc. 
-            If you prefer to take all your photos in a specific area (like the historic neighborhood), we can visit as many spots as time allows. 
-            This is often a great option for academic buildings, Alamance, and the fountain.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 2 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-            How do I calculate my group size?
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            The group size refers to the number of graduates who will be having portraits taken. 
-            This does not include non-graduates or individuals who are only joining in for a few photos.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 3 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-            Do I get access to all of my photos?
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            You will receive access to all of the quality edited photos from your shoot in a digital gallery, where you can view and download them. 
-            Please note, raw files are not included. You may request major re-edits (e.g., removing stray hairs) for up to 5 photos per shoot.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 4 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFour">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-            When will I receive my gallery?
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            You will have access to your digital gallery within 7 days of your shoot, though I typically return galleries sooner. 
-            Payment for the session is due 5 days after the shoot.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 5 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingFive">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-            What if the weather is bad?
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            If we need to postpone due to bad weather, we will reschedule as soon as possible—usually within one week.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 6 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSix">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
-            How do I reserve a spot?
-          </button>
-        </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Your spot is confirmed once you fill out the <a href="https://forms.gle/XaGw6ghwwDDLKoLs8" target="_blank">request form</a> and submit a $50 non-refundable deposit to reserve your session. You can venmo @erin-martin-223 or contact me for other payment methods. 
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 7 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingSeven">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
-            Other questions?
-          </button>
-        </h2>
-        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Feel free to contact me at <a href="mailto:erinmartinmedia@gmail.com">erinmartinmedia@gmail.com</a> or 704-661-5816.
-          </div>
-        </div>
-      </div>
+<div class="container">
+    <div class="copy-container center-xy">
+        <p>
+            404, page not found.
+        </p>
+        <span class="handle"></span>
 
     </div>
-  </div>
-</section>
+</div>
 
- <section class="resume-section2 d-flex flex-column align-items-center text-center" id="photos">
-    <div class="row">
-  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-   
-    <img
-      src="../gradphotos/GraduationPhotos-3.jpg"
-      class="w-100 shadow-1-strong rounded mb-4"
-         />
-  </div>
 
-  <div class="col-lg-4 mb-4 mb-lg-0">
-  
+<svg version="1.1" id="cb-replay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 279.9 297.3" style="enable-background:new 0 0 279.9 297.3;" xml:space="preserve">
+<g>
+	<path d="M269.4,162.6c-2.7,66.5-55.6,120.1-121.8,123.9c-77,4.4-141.3-60-136.8-136.9C14.7,81.7,71,27.8,140,27.8
+		c1.8,0,3.5,0,5.3,0.1c0.3,0,0.5,0.2,0.5,0.5v15c0,1.5,1.6,2.4,2.9,1.7l35.9-20.7c1.3-0.7,1.3-2.6,0-3.3L148.6,0.3
+		c-1.3-0.7-2.9,0.2-2.9,1.7v15c0,0.3-0.2,0.5-0.5,0.5c-1.7-0.1-3.5-0.1-5.2-0.1C63.3,17.3,1,78.9,0,155.4
+		C-1,233.8,63.4,298.3,141.9,297.3c74.6-1,135.1-60.2,138-134.3c0.1-3-2.3-5.4-5.3-5.4l0,0C271.8,157.6,269.5,159.8,269.4,162.6z"/>
+</g>
+</svg>
 
-    <img
-      src="../gradphotos/GraduationPhotos-26.jpg"
-      class="w-100 shadow-1-strong rounded mb-4"
-    />
-  </div>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
-  <div class="col-lg-4 mb-4 mb-lg-0">
-   
-    <img
-      src="../gradphotos/GraduationPhotos-16.jpg"
-      class="w-100 shadow-1-strong rounded mb-4"
-    />
-  </div>
-</div></section>
+    // helper
+    .center-xy {
+    // width: inherit;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+    }
 
-    <footer class="footer">
-        <div class="container text-center">
-            <ul class="list-inline list-social-icons mb-3">
-                <li class="list-inline-item">
-                    <a href="https://www.instagram.com/emartin.media/" target="_blank">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://x.com/erinmartin35" target="_blank">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="mailto:erinmartinmedia@gmail.com">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-            <p>&copy; 2025 E MARTIN MEDIA. ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
+    html, body {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 16px;
+    }
 
-    <!-- JavaScript Files (Move to Bottom for Performance) -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="../js/resume.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    html {
+        box-sizing: border-box;
+        user-select: none;
+    }
 
-</body>
-</html>
+    body {
+        background-color: #000;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .copy-container {
+        text-align: center;
+    }
+
+    p {
+        color: #fff;
+        font-size: 24px;
+        letter-spacing: .2px;
+        margin: 0;
+    }
+
+    .handle {
+        background: #ffe500;
+        width: 14px;
+        height: 30px;
+        top: 0;
+        left: 0;
+        margin-top: 1px;
+        position: absolute;
+    }
+
+    #cb-replay {
+        fill: #666;
+        width: 20px;
+        margin: 15px;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        overflow: inherit;
+        cursor: pointer;
+
+        &:hover {
+            fill: #888;
+        }
+    }
+</style>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="">-->
+<!--    <title>Grad Photos</title>-->
+<!--    <link rel="icon" href="../img/favicon.png">-->
+
+<!--    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+<!--    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Custom fonts &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">-->
+<!--      -->
+<!--    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">-->
+<!--    <link href="../vendor/devicons/css/devicons.min.css" rel="stylesheet">-->
+<!--    <link href="../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">-->
+
+<!--    &lt;!&ndash; Custom styles &ndash;&gt;-->
+<!--    <link href="css/gradphotos.css" rel="stylesheet">-->
+<!--</head>-->
+
+<!--<body>-->
+
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">-->
+<!--        <ul class="navbar-nav">-->
+<!--            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://forms.gle/XaGw6ghwwDDLKoLs8" target="_blank">Booking</a></li>-->
+<!--            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#faq">FAQ</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+<!--    -->
+<!--   <section class="resume-section d-flex flex-column align-items-center text-center" id="pricing">-->
+<!--  <div class="my-auto">-->
+<!--    <h2><div class="blue-header">Pricing</div></h2>-->
+<!--    <div class="container mt-4">-->
+<!--      <div class="row justify-content-center">-->
+<!--        &lt;!&ndash; Package 1 &ndash;&gt;-->
+<!--        <div class="col-md-4 mb-4">-->
+<!--          <div class="card h-100">-->
+<!--            <img src="../gradphotos/emartinmediagradphotosexamples-13.jpg" class="card-img-top" alt="1 Hour Individual">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">30 Minute Shoot</h5>-->
+<!--              <h6 class="card-subtitle mb-2 text-muted">$75</h6>-->
+<!--              <p class="card-text">-->
+<!--                  Individual shoot<br>-->
+<!--                Unlimited photos<br>-->
+<!--                One outfit<br>-->
+<!--                Up to 3 distinct locations-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Package 2 &ndash;&gt;-->
+<!--        <div class="col-md-4 mb-4">-->
+<!--          <div class="card h-100">-->
+<!--            <img src="../gradphotos/GraduationPhotos-11.jpg" class="card-img-top" alt="1 Hour Individual">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">1 Hour Shoot</h5>-->
+<!--              <h6 class="card-subtitle mb-2 text-muted">$150</h6>-->
+<!--              <p class="card-text">-->
+<!--                                    Individual shoot<br>-->
+
+<!--                Unlimited photos<br>-->
+<!--                One or two outfits<br>-->
+<!--                Up to 5 distinct locations-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Package 3 &ndash;&gt;-->
+<!--        <div class="col-md-4 mb-4">-->
+<!--          <div class="card h-100">-->
+<!--            <img src="../gradphotos/GraduationPhotos-24.jpg" class="card-img-top" alt="1 Hour Individual">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">1 Hour Shoot</h5>-->
+<!--              <h6 class="card-subtitle mb-2 text-muted">$300</h6>-->
+<!--              <p class="card-text">-->
+<!--                Up to 3 people shoot<br>-->
+<!--                Unlimited photos<br>-->
+<!--                One outfit<br>-->
+<!--                Up to 5 distinct locations-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Package 4 &ndash;&gt;-->
+<!--        <div class="col-md-4 mb-4">-->
+<!--          <div class="card h-100">-->
+<!--            <img src="../gradphotos/GraduationPhotos-18.jpg" class="card-img-top" alt="1 Hour Individual">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">1 Hour Shoot</h5>-->
+<!--              <h6 class="card-subtitle mb-2 text-muted">$400</h6>-->
+<!--              <p class="card-text">-->
+<!--                4 to 8 people<br>-->
+<!--                  Unlimited photos<br>-->
+<!--                One outfit<br>-->
+<!--                Up to 5 distinct locations-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Package 5 &ndash;&gt;-->
+<!--        <div class="col-md-4 mb-4">-->
+<!--          <div class="card h-100">-->
+<!--            <img src="../gradphotos/GraduationPhotos-7.jpg" class="card-img-top" alt="1 Hour Individual">-->
+<!--            <div class="card-body">-->
+<!--              <h5 class="card-title">1 Hour Shoot</h5>-->
+<!--              <h6 class="card-subtitle mb-2 text-muted">$450</h6>-->
+<!--              <p class="card-text">-->
+<!--                8+ people<br>-->
+<!--                  Unlimited photos<br>-->
+<!--                One outfit<br>-->
+<!--                Up to 3 distinct locations-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--    -->
+<!--       -->
+<!--    <section class="resume-section d-flex flex-column align-items-center text-center" id="faq">-->
+<!--  <h2><div class="blue-header">FAQ</div></h2>-->
+<!--  <div class="container mt-4 text-start">-->
+<!--    <div class="accordion" id="faqAccordion">-->
+
+<!--      &lt;!&ndash; FAQ 1 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingOne">-->
+<!--          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">-->
+<!--            What does "distinct locations" mean?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            Distinct locations refer to unique spots on campus, such as Lake Mary Nell, a residential neighborhood, an academic building, a fountain, etc. -->
+<!--            If you prefer to take all your photos in a specific area (like the historic neighborhood), we can visit as many spots as time allows. -->
+<!--            This is often a great option for academic buildings, Alamance, and the fountain.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; FAQ 2 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingTwo">-->
+<!--          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">-->
+<!--            How do I calculate my group size?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            The group size refers to the number of graduates who will be having portraits taken. -->
+<!--            This does not include non-graduates or individuals who are only joining in for a few photos.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; FAQ 3 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingThree">-->
+<!--          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">-->
+<!--            Do I get access to all of my photos?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            You will receive access to all of the quality edited photos from your shoot in a digital gallery, where you can view and download them. -->
+<!--            Please note, raw files are not included. You may request major re-edits (e.g., removing stray hairs) for up to 5 photos per shoot.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; FAQ 4 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingFour">-->
+<!--          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">-->
+<!--            When will I receive my gallery?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            You will have access to your digital gallery within 7 days of your shoot, though I typically return galleries sooner. -->
+<!--            Payment for the session is due 5 days after the shoot.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; FAQ 5 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingFive">-->
+<!--          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">-->
+<!--            What if the weather is bad?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            If we need to postpone due to bad weather, we will reschedule as soon as possible—usually within one week.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; FAQ 6 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingSix">-->
+<!--          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">-->
+<!--            How do I reserve a spot?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            Your spot is confirmed once you fill out the <a href="https://forms.gle/XaGw6ghwwDDLKoLs8" target="_blank">request form</a> and submit a $50 non-refundable deposit to reserve your session. You can venmo @erin-martin-223 or contact me for other payment methods. -->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; FAQ 7 &ndash;&gt;-->
+<!--      <div class="accordion-item">-->
+<!--        <h2 class="accordion-header" id="headingSeven">-->
+<!--          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">-->
+<!--            Other questions?-->
+<!--          </button>-->
+<!--        </h2>-->
+<!--        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">-->
+<!--          <div class="accordion-body">-->
+<!--            Feel free to contact me at <a href="mailto:erinmartinmedia@gmail.com">erinmartinmedia@gmail.com</a> or 704-661-5816.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!-- <section class="resume-section2 d-flex flex-column align-items-center text-center" id="photos">-->
+<!--    <div class="row">-->
+<!--  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">-->
+<!--   -->
+<!--    <img-->
+<!--      src="../gradphotos/GraduationPhotos-3.jpg"-->
+<!--      class="w-100 shadow-1-strong rounded mb-4"-->
+<!--         />-->
+<!--  </div>-->
+
+<!--  <div class="col-lg-4 mb-4 mb-lg-0">-->
+<!--  -->
+
+<!--    <img-->
+<!--      src="../gradphotos/GraduationPhotos-26.jpg"-->
+<!--      class="w-100 shadow-1-strong rounded mb-4"-->
+<!--    />-->
+<!--  </div>-->
+
+<!--  <div class="col-lg-4 mb-4 mb-lg-0">-->
+<!--   -->
+<!--    <img-->
+<!--      src="../gradphotos/GraduationPhotos-16.jpg"-->
+<!--      class="w-100 shadow-1-strong rounded mb-4"-->
+<!--    />-->
+<!--  </div>-->
+<!--</div></section>-->
+
+<!--    <footer class="footer">-->
+<!--        <div class="container text-center">-->
+<!--            <ul class="list-inline list-social-icons mb-3">-->
+<!--                <li class="list-inline-item">-->
+<!--                    <a href="https://www.instagram.com/emartin.media/" target="_blank">-->
+<!--                        <span class="fa-stack fa-lg">-->
+<!--                            <i class="fa fa-circle fa-stack-2x"></i>-->
+<!--                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>-->
+<!--                        </span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="list-inline-item">-->
+<!--                    <a href="https://x.com/erinmartin35" target="_blank">-->
+<!--                        <span class="fa-stack fa-lg">-->
+<!--                            <i class="fa fa-circle fa-stack-2x"></i>-->
+<!--                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>-->
+<!--                        </span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="list-inline-item">-->
+<!--                    <a href="mailto:erinmartinmedia@gmail.com">-->
+<!--                        <span class="fa-stack fa-lg">-->
+<!--                            <i class="fa fa-circle fa-stack-2x"></i>-->
+<!--                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>-->
+<!--                        </span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            <p>&copy; 2025 E MARTIN MEDIA. ALL RIGHTS RESERVED.</p>-->
+<!--        </div>-->
+<!--    </footer>-->
+
+<!--    &lt;!&ndash; JavaScript Files (Move to Bottom for Performance) &ndash;&gt;-->
+<!--    <script src="../vendor/jquery/jquery.min.js"></script>-->
+<!--    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+<!--    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>-->
+<!--    <script src="../js/resume.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
+
+<!--</body>-->
+<!--</html>-->

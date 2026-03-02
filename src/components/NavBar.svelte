@@ -1,0 +1,136 @@
+<script>
+	import { slide, fade } from 'svelte/transition';
+
+	let section,wrapper;
+	let mobileMenu = $state(false);
+
+	function setMobileMenu() {
+		mobileMenu = !mobileMenu;
+	}
+</script>
+
+<nav class="sticky top-0 z-50 block w-full max-w-full rounded-none px-4 py-4">
+	<div class="container mx-auto flex items-center justify-between px-4">
+		<p class="block font-fredoka font-bold text-lg tracking-wider capitalize antialiased">
+		<a href="/">E. MARTIN MEDIA</a>
+		</p>
+		<ul class="hidden items-center gap-8 lg:flex" bind:this={section}>
+			<li>
+				<a
+					href="/about"
+					class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+				>
+					About</a
+				>
+			</li>
+			<li>
+					<a
+						href="/layout"
+						class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+					>
+						Work</a
+					>
+				</li>
+				<li>
+					<a href="img/ErinMartin_Resume.pdf" target="_blank" download
+						class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+					>
+						Resume</a
+					>
+				</li>
+					<li>
+					<a
+						href="mailto:erinmartin612@gmail.com"
+						class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+					>
+						Contact</a
+					>
+				</li>
+		</ul>
+
+		<button
+			class="relative ml-auto inline-block h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg text-center align-middle font-sans text-xs font-medium uppercase transition-all select-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+			type="button"
+			onclick={setMobileMenu}
+		><span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+						{#if !mobileMenu}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="currentColor"
+								aria-hidden="true"
+								stroke-width="2"
+								class="h-6 w-6"
+							><path
+								fill-rule="evenodd"
+								d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+								clip-rule="evenodd"
+							></path></svg
+							>{:else}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="currentColor"
+								class="size-6"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+						{/if}
+				</span></button
+		>
+	</div>
+
+		{#if mobileMenu}
+			<div class="lg:hidden px-2">
+				<div
+					bind:this={wrapper}
+					transition:slide
+					class="overflow-hidden transition-[height] duration-300"
+					style="height: {mobileMenu ? `${wrapper?.scrollHeight}px` : '0px'}"
+				>
+					<div
+						transition:fade
+						class="container mx-auto mt-4 mb-3 border-t border-gray-200 px-2 pt-4"
+					>
+						<ul class="flex flex-col gap-4">
+							<li>
+								<a
+									href="/about"
+									class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+								>
+									About</a
+								>
+							</li>
+							<li>
+									<a href="img/ErinMartin_Resume.pdf" target="_blank" download
+										class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+									>
+										Resume</a
+									>
+								</li>
+							<li>
+									<a
+										href="mailto:erinmartin612@gmail.com"
+										class="flex items-center gap-2  text-base leading-relaxed font-medium font-inter antialiased hover:text-gray-300"
+									>
+										Contact</a
+									>
+								</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	{/if}
+</nav>
+<style>
+
+    .sticky {
+        background: #457996;
+        color: white;
+    }
+
+</style>

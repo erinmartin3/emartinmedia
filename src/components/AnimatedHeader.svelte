@@ -39,7 +39,7 @@
 </script>
 
 <header>
-	<h1 class="text-4xl font-bold font-fredoka tracking-wide text-gray-800 dark:text-white">
+	<h1 class="text-4xl font-bold font-fredoka tracking-wide text-gray-800">
 		My name is Erin Martin,<br>
 		I'm a{" "}
 		<span

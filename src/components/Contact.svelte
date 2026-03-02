@@ -6,7 +6,7 @@
 <!--<script>-->
 <!--</script>-->
 
-<!--<section class="bg-gray-100 dark:bg-gray-900">-->
+<!--<section class="bg-gray-100">-->
 <!--	<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">-->
 <!--		<h2 class="font-bold text-[#457996] dark:text-white mb-4 font-fredoka uppercase text-5xl text-center">-->
 <!--			Contact Me-->

@@ -58,7 +58,7 @@
 
 <section class="bg-gray-100">
 
-	<h2 class="font-bold text-[#457996] mb-10 md:mb-5 mb-4 dark:text-white font-fredoka uppercase md:text-5xl text-4xl text-center">
+	<h2 class="font-bold text-[#457996] mb-10 md:mb-5 mb-4  font-fredoka uppercase md:text-5xl text-4xl text-center">
 		Featured Projects
 	</h2>
 
@@ -113,7 +113,7 @@
 			{#each projects as project (project.title)}
 				{#if isVisible(project)}
 					<a href={project.link}>
-					<div class="flex-1 min-w-[250px] max-w-sm bg-white dark:bg-gray-900 p-4 rounded-xl shadow hover:-translate-y-1 transition-transform">
+					<div class="flex-1 min-w-[250px] max-w-sm bg-white  p-4 rounded-xl shadow hover:-translate-y-1 transition-transform">
 						{#if project.type==="img"}
 						<img src={project.image} class="aspect-16/9 object-cover object-top rounded-md mb-3" alt={project.title} />
 							{:else if project.type=="video"}
@@ -131,7 +131,7 @@
 							<p class="mt-2 inline-block text-xs px-2 rounded font-inter text-gray-500">{project.description}</p>
 						</div>
 						{#each project.category as cat}
-	<span class="mr-2 my-1 inline-block text-xs px-2 py-1 rounded font-inter bg-gray-100 dark:bg-gray-700 text-gray-500">
+	<span class="mr-2 my-1 inline-block text-xs px-2 py-1 rounded font-inter bg-gray-100  text-gray-500">
 		{cat}
 	</span>
 						{/each}

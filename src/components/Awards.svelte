@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<h2 class="font-bold text-[#457996] dark:text-white mb-6 mt-10 font-fredoka uppercase text-4xl"> Awards</h2>
+<h2 class="font-bold text-[#457996] mb-6 mt-10 font-fredoka uppercase text-4xl"> Awards</h2>
 <div class="flex items-center">
-	<ol class="grid grid-cols-1 gap-4 content-center font-inter font-regular text-gray-800 md:text-md dark:text-gray-400">
+	<ol class="grid grid-cols-1 gap-4 content-center font-inter font-regular text-gray-800 md:text-md ">
 		<li><b>2025</b> 3rd Place, Multimedia Sports Story, Associated Collegiate Press</li>
 		<li><b>2025</b> Top 20, Photojournalism Picture Story/Series Competition, Hearst Journalism Awards Program</li>
 		<!--					<li><b>2025</b> 1st Place, Photo Illustration, Society of Professional Journalists Region 2</li>-->

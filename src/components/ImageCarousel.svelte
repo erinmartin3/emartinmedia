@@ -38,7 +38,7 @@
 
 <div class="relative w-full">
 
-	<h2 class="font-bold text-[#457996] dark:text-white font-fredoka text-3xl text-center mx-10 mb-4">
+	<h2 class="font-bold text-[#457996]  font-fredoka text-3xl text-center mx-10 mb-4">
 		At DNC, Democrats highlight <br> stakes of November Election
 	</h2>
 
@@ -90,7 +90,7 @@
 </div>
 
 <div class="text-center">
-	<p class="p-5 pb-4 font-inter text-sm font-medium text-gray-700 dark:text-gray-300 max-w-xl mx-auto">
+	<p class="p-5 pb-4 font-inter text-sm font-medium text-gray-700  max-w-xl mx-auto">
 		{slides[current].description}
 	</p>
 </div>

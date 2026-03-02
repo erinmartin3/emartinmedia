@@ -41,29 +41,29 @@
 </script>
 
 <section class="max-w-4xl mx-auto px-6 pt-16">
-	<h2 class="font-bold text-[#457996] dark:text-white mb-3 font-fredoka uppercase text-5xl text-center">
+	<h2 class="font-bold text-[#457996] mb-3 font-fredoka uppercase text-5xl text-center">
 		Experience
 	</h2>
 
 	<div class="text-center mb-10">
-	<button type="button" class="text-gray-400 text-center focus:outline-none hover:text-gray-800 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="img/ErinMartin_Resume.pdf" target="_blank" download><i class="fa fa-download"></i> Download my full resume</a></button>
+	<button type="button" class="text-gray-400 text-center focus:outline-none hover:text-gray-800 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm me-2 mb-2 "><a href="img/ErinMartin_Resume.pdf" target="_blank" download><i class="fa fa-download"></i> Download my full resume</a></button>
 	</div>
 
 	<div class="space-y-10 mb-15">
 		{#each experiences as exp}
-			<div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md">
+			<div class="p-6 bg-white  rounded-2xl shadow-md">
 				<div class="flex justify-between">
-				<h3 class="text-2xl font-bold uppercase font-fredoka text-gray-800 dark:text-white">
+				<h3 class="text-2xl font-bold uppercase font-fredoka text-gray-800 ">
 					{exp.role}
 				</h3>
-				<p class="text-sm font-inter text-[#457996] dark:text-gray-300 mb-3">
+				<p class="text-sm font-inter text-[#457996]  mb-3">
 					{exp.dates}
 				</p>
 				</div>
-				<p class="pt-2 text-sm font-inter  uppercase text-[#457996] dark:text-gray-300 mb-3">
+				<p class="pt-2 text-sm font-inter  uppercase text-[#457996]  mb-3">
 					<a href={exp.link} class="hover:underline" target="_blank">{exp.company}</a>
 				</p>
-				<ul class="font-inter space-y-2 text-gray-400 dark:text-gray-200">
+				<ul class="font-inter space-y-2 text-gray-400 ">
 						<li>{exp.description}</li>
 				</ul>
 			</div>

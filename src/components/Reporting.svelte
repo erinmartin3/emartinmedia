@@ -39,15 +39,15 @@
 <div class="grid lg:grid-cols-4 grid-cols-2 gap-4">
 	{#each stories as story}
 		<a href={story.link} target="_blank">
-		<div class="p-5 bg-white dark:bg-gray-800 rounded-2xl shadow-md flex flex-wrap hover:-translate-y-1  items-center">
+		<div class="p-5 bg-white  rounded-2xl shadow-md flex flex-wrap hover:-translate-y-1  items-center">
 					<img src={story.image} class="sm:rounded-xl rounded-2xl mb-2 object-cover object-center aspect-5/3" alt={story.title} />
 			<div class="">
-			<h3 class="sm:pt-0 pt-4 text-lg font-bold font-inter font-medium leading-snug hover:underline text-gray-800 dark:text-white">{story.title}</h3>
-					<p class="text-sm font-inter font-medium italic mt-1 text-gray-500 dark:text-gray-300">
+			<h3 class="sm:pt-0 pt-4 text-lg font-bold font-inter font-medium leading-snug hover:underline text-gray-800 ">{story.title}</h3>
+					<p class="text-sm font-inter font-medium italic mt-1 text-gray-500 ">
 					{story.date}</p>
 				{#if story.role}
 					<span
-						class="mt-3 inline-block text-xs px-2 py-1 rounded font-inter bg-gray-300 dark:bg-gray-700 text-gray-600"> {story.role}</span>
+						class="mt-3 inline-block text-xs px-2 py-1 rounded font-inter bg-gray-300  text-gray-600"> {story.role}</span>
 				{/if}
 					</div>
 		</div>

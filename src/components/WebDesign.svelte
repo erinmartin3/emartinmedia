@@ -35,7 +35,7 @@
 
 		<div class="flex grid grid-cols-1 md:grid-cols-3 justify-items-center gap-6 cursor-pointer">
 			{#each projects as project (project.title)}
-						<div class="flex-1 min-w-[250px] max-w-sm bg-white dark:bg-gray-900 p-4 rounded-xl shadow hover:-translate-y-1 transition-transform">
+						<div class="flex-1 min-w-[250px] max-w-sm bg-white p-4 rounded-xl shadow hover:-translate-y-1 transition-transform">
 							<a href={project.link}>
 
 							{#if project.type==="img"}
@@ -47,10 +47,10 @@
 							</div>
 					</a>
 							<a href={project.link2}>
-		<span class="mr-1 my-1 inline-block text-xs px-2 py-1 rounded font-inter bg-[#457996] dark:bg-gray-700 text-white hover:bg-gray-400">
+		<span class="mr-1 my-1 inline-block text-xs px-2 py-1 rounded font-inter bg-[#457996]  text-white hover:bg-gray-400">
 		Live Site
 		</span></a>
-								<a href={project.link}><span class="mr-1 my-1 inline-block text-xs px-2 py-1 rounded font-inter bg-gray-800 dark:bg-gray-700 text-gray-500 text-white hover:bg-gray-400">
+								<a href={project.link}><span class="mr-1 my-1 inline-block text-xs px-2 py-1 rounded font-inter bg-gray-800  text-gray-500 text-white hover:bg-gray-400">
 		Project Details
 	</span></a>
 						</div>

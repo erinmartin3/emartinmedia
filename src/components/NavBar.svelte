@@ -106,6 +106,14 @@
 								>
 							</li>
 							<li>
+								<a
+									href="/layout"
+									class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+								>
+									Work</a
+								>
+							</li>
+							<li>
 									<a href="img/ErinMartin_Resume.pdf" target="_blank" download
 										class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
 									>

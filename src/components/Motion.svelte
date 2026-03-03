@@ -27,7 +27,6 @@
 					class="object-cover cursor-pointer"
 					muted
 					loop
-					autoplay
 				>
 					<source src={video.src} type="video/mp4" />
 				</video>

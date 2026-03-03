@@ -11,7 +11,7 @@ import { Gallery, Video } from 'flowbite-svelte';
 
 	<div class=" max-w-7xl mx-auto mt-6">
 		<div class="flex justify-center">
-			<h2 class="font-bold text-[#457996] my-5 md:mb-7 mb-4 dark:text-white font-fredoka uppercase md:text-5xl text-4xl text-center">
+			<h2 class="font-bold text-[#457996] my-5 md:mb-7 mb-4  font-fredoka uppercase md:text-5xl text-4xl text-center">
 				Rocket League	Sparks Connection
 			</h2>
 		</div>
@@ -22,8 +22,8 @@ import { Gallery, Video } from 'flowbite-svelte';
 			</p>
 
 			<div class="">
-				<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="/img/rocketleague.pdf" target="_blank">Print</a></button>
-				<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="https://elonnewsnetwork.shorthandstories.com/elonesports/index.html" target="_blank">Digital Story</a></button>
+				<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "><a href="/img/rocketleague.pdf" target="_blank">Print</a></button>
+				<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "><a href="https://elonnewsnetwork.shorthandstories.com/elonesports/index.html" target="_blank">Digital Story</a></button>
 
 			</div>
 

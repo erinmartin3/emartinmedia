@@ -33,7 +33,7 @@
 					<button class="w-full rounded-xl bg-[#457996] text-white font-fredoka uppercase font-semibold text-4xl p-10 h-full object-cover cursor-pointer group-hover:opacity-75 ">{cat.name}</button>
 <!--					<img src="{cat.image}" alt="{cat.name}" class="w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 " />-->
 			</a>
-<!--				<p class="font-bold text-gray-400 mt-3 md:mb-5 dark:text-white font-inter text-lg text-center">-->
+<!--				<p class="font-bold text-gray-400 mt-3 md:mb-5  font-inter text-lg text-center">-->
 
 			<!--{cat.name}</p>-->
 			</div>

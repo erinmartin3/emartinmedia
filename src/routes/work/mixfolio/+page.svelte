@@ -24,7 +24,7 @@
 
 	<div class=" max-w-7xl mx-auto mt-6 mb-10">
 		<div class="flex justify-center">
-			<h2 class="font-bold text-[#457996] my-5 md:mb-7 mb-4 dark:text-white font-fredoka uppercase md:text-5xl text-4xl text-center">
+			<h2 class="font-bold text-[#457996] my-5 md:mb-7 mb-4  font-fredoka uppercase md:text-5xl text-4xl text-center">
 				MixFolio
 			</h2>
 		</div>
@@ -39,9 +39,9 @@
 		</p>
 
 		<div class="">
-			<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="https://mixfolio.vercel.app/" target="_blank">Live Site</a></button>
-			<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="https://github.com/jakebogan01/mixfolio" target="_blank">GitHub Repo</a></button>
-			<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><a href="https://mixfolio.vercel.app/portfolio/sample" target="_blank">Sample Portfolio</a></button>
+			<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "><a href="https://mixfolio.vercel.app/" target="_blank">Live Site</a></button>
+			<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "><a href="https://github.com/jakebogan01/mixfolio" target="_blank">GitHub Repo</a></button>
+			<button type="button" class="text-white bg-gray-800 border border-gray-300 focus:outline-none hover:bg-gray-400 focus:ring-4 focus:ring-gray-100 font-inter font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "><a href="https://mixfolio.vercel.app/portfolio/sample" target="_blank">Sample Portfolio</a></button>
 		</div>
 		</div>
 	</div>
@@ -49,7 +49,7 @@
 			<div class="grid md:grid-cols-2 grid-cols-1 m-5 gap-4">
 
 				<div>
-				<h2 class="font-bold text-[#457996] md:mb-4 mb-4 dark:text-white font-fredoka uppercase md:text-2xl text-2xl text-center md:text-left">
+				<h2 class="font-bold text-[#457996] md:mb-4 mb-4  font-fredoka uppercase md:text-2xl text-2xl text-center md:text-left">
 					Dashboard
 				</h2>
 			<div class="h-[300px] overflow-y-auto">
@@ -61,7 +61,7 @@
 				</div>
 				</div>
 					<div>
-						<h2 class="font-bold text-[#457996] md:mb-4 mb-4 dark:text-white font-fredoka uppercase md:text-2xl text-2xl text-center md:text-left">
+						<h2 class="font-bold text-[#457996] md:mb-4 mb-4  font-fredoka uppercase md:text-2xl text-2xl text-center md:text-left">
 							<a href="https://mixfolio.vercel.app/portfolio/sample" target="_blank">Sample Portfolio</a>
 						</h2>
 				<div class="h-[300px] overflow-y-auto">
@@ -77,7 +77,7 @@
 			<div class="flex flex-wrap grid	grid-cols-1 md:grid-cols-2  m-5">
 
 				<div class="md:hidden">
-					<h2 class="font-bold text-[#457996] md:mb-4 dark:text-white font-fredoka uppercase md:text-2xl text-2xl text-center mt-3">
+					<h2 class="font-bold text-[#457996] md:mb-4  font-fredoka uppercase md:text-2xl text-2xl text-center mt-3">
 						Color Swap
 					</h2>
 					<p class="md:p-0 p-5">One of the unique elements of this portfolio site is how you can instantly change the look of your portfolio by either swapping the theme or changing the color scheme. I led the development for this tool and wanted it to be an easy user experience while also ensuring the site is still accessible.
@@ -87,7 +87,7 @@
 			<Video src="/img/videos/mixfoliocolorswap2.mp4" autoplay muted loop controls trackSrc="mixfoliocolorswap2.mp4"/>
 
 				<div class="hidden md:block md:pl-5">
-					<h2 class="font-bold text-[#457996] md:mb-4 dark:text-white font-fredoka uppercase md:text-2xl text-2xl md:pt-5 text-center md:text-left mt-8">
+					<h2 class="font-bold text-[#457996] md:mb-4  font-fredoka uppercase md:text-2xl text-2xl md:pt-5 text-center md:text-left mt-8">
 						Color Swap
 					</h2>
 					<p class="md:p-0 p-5">One of the unique elements of this portfolio site is you can instantly change the look of your portfolio by either swapping the theme or changing the color scheme. I led the development for this tool and am very happy with how it came out while ensuring the site is still accessible.

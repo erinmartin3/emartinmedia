@@ -31,7 +31,7 @@
 
 	<div class=" max-w-7xl mx-auto mt-6 mb-10">
 		<div class="flex justify-center">
-			<h2 class="font-bold text-[#457996] my-5 md:mb-7 mb-4 dark:text-white font-fredoka uppercase md:text-5xl text-4xl text-center">
+			<h2 class="font-bold text-[#457996] my-5 md:mb-7 mb-4  font-fredoka uppercase md:text-5xl text-4xl text-center">
 				ENN TONIGHT GRAPHICS
 			</h2>
 		</div>
@@ -59,7 +59,7 @@
 					{/each}
 
 			</div>
-			<h2 class="font-bold text-[#457996] my-5 md:mt-7 mb-4 dark:text-white font-fredoka uppercase md:text-3xl text-2xl text-center">
+			<h2 class="font-bold text-[#457996] my-5 md:mt-7 mb-4  font-fredoka uppercase md:text-3xl text-2xl text-center">
 				Ross Integration
 			</h2>
 				<div class="flex flex-wrap grid	grid-cols-1 md:grid-cols-2 md:m-5">

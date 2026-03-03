@@ -27,7 +27,7 @@
 			<h2 class="font-bold text-[#457996] mb-6 mt-5 font-fredoka uppercase text-4xl">About</h2>
 			<div class="flex items-center">
 				<ol class="grid grid-cols-1 gap-4 content-center font-inter font-regular text-gray-800 md:text-md ">
-					<li>I am a multidisciplinary visual storyteller based in Washington, DC. I bring extensive internship, freelance and student media experience, along with a background in computer science and communications. I aim to create meaningful digital work that blends creativity and technology.</li>
+					<li>I am a multidisciplinary visual storyteller based in Washington, DC. With a background in computer science and communications. I aim to create meaningful digital work that blends creativity and technology.</li>
 				</ol>
 			</div>
 			<h2 class="font-bold text-[#457996] mb-6 mt-10 font-fredoka uppercase text-4xl">Software</h2>

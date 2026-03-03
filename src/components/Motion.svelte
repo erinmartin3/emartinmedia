@@ -27,6 +27,7 @@
 					class="object-cover cursor-pointer"
 					muted
 					loop
+					controls
 				>
 					<source src={video.src} type="video/mp4" />
 				</video>

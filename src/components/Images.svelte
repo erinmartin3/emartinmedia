@@ -7,7 +7,7 @@
 				 src="/img/erinspeak.jpg"
 				 alt="gallery-photo" />
 	</div>
-	<div>
+	<div class="hidden md:block">
 		<img class="object-cover object-center md:h-70 h-50 aspect-5/3 rounded-lg"
 				 src="/img/electionphoto.jpg"
 				 alt="gallery-photo" />

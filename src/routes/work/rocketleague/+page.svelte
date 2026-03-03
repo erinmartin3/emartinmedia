@@ -35,7 +35,7 @@ import { Gallery, Video } from 'flowbite-svelte';
 				</div>
 				<div>
 					<a href="https://elonnewsnetwork.shorthandstories.com/elonesports/index.html" target="_blank">
-						<Video src="/img/videos/" autoplay muted loop controls trackSrc="rocketleauge.mp4"/>
+						<Video src="/img/videos/rocketleague.mp4" autoplay muted loop controls trackSrc="rocketleauge.mp4"/>
 					</a>
 					<div class="h-[300px] overflow-y-auto mt-5">
 						<a href="https://elonnewsnetwork.shorthandstories.com/elonesports/index.html" target="_blank"><img

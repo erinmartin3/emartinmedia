@@ -32,8 +32,9 @@
 					>
 				</li>
 				<li>
-					<a href="img/ErinMartin_Resume.pdf" target="_blank" download
-						class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
+<!--					<a href="img/ErinMartin_Resume.pdf" target="_blank" download-->
+						<a href="https://www.linkedin.com/in/erinmartin35/" target="_blank"
+							 class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
 					>
 						Resume</a
 					>
@@ -114,7 +115,8 @@
 								>
 							</li>
 							<li>
-									<a href="img/ErinMartin_Resume.pdf" target="_blank" download
+<!--								<a href="img/ErinMartin_Resume.pdf" target="_blank" download-->
+									<a href="https://www.linkedin.com/in/erinmartin35/" target="_blank"
 										class="flex items-center gap-2 font-inter text-base leading-relaxed font-medium antialiased hover:text-gray-300"
 									>
 										Resume</a
